@@ -1,4 +1,5 @@
 import * as productsController from './productsController';
+import React from 'react'
 
 // Constants
 const ADD_TO_SHOPPING_CART = "ADD_TO_SHOPPING_CART";
@@ -13,7 +14,7 @@ let initialState = {
 }
 
 // Reducer
-export default function reducer(state, action) {
+export default function reducer(state = initialState, action) {
     switch(action.type) {
         case GET_ALL_PRODUCTS_PENDING:
             return Object.assign({}, state, {loading: true});

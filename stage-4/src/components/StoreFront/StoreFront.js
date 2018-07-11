@@ -4,6 +4,13 @@ import { connect } from 'react-redux';
 import { addToShoppingCart, getAllProducts } from '../../redux/reducer';
 
 class StoreFront extends Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+            products: '',
+            loading: ''
+        }
+    }
 
     componentDidMount() {
         this.props.getAllProducts();
@@ -31,9 +38,10 @@ class StoreFront extends Component {
 }
 
 function mapStateToProps(state) {
+    const {products, loading} = state
     return {
-        products: state.products,
-        loading: state.loading,
+        products,
+        loading
     }
 }
 
